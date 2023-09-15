@@ -1,6 +1,10 @@
 package employee.version1;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 public class PieceWorkerEmployee {
 	private int empID;
@@ -116,7 +120,63 @@ public class PieceWorkerEmployee {
     
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+          ArrayList<PieceWorkerEmployee> employees = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Enter the maximum number of employees: ");
+        int maxEmployees = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline character
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+        for (int i = 0; i < maxEmployees; i++) {
+            System.out.println("\nEnter Employee #" + (i + 1) + " Details:");
+            System.out.print("Employee ID: ");
+            int empID = scanner.nextInt();
+            scanner.nextLine(); // Consume the newline character
+
+            System.out.print("Employee Name: ");
+            String empName = scanner.nextLine();
+
+            System.out.print("Date Hired (dd-MM-yyyy): ");
+            String hireDateStr = scanner.nextLine();
+            Date empDateHired = parseDate(dateFormat, hireDateStr);
+
+            System.out.print("Birth Date (dd-MM-yyyy): ");
+            String birthDateStr = scanner.nextLine();
+            Date empBirthDate = parseDate(dateFormat, birthDateStr);
+
+            System.out.print("Total Pieces Finished: ");
+            int totalPiecesFinished = scanner.nextInt();
+            scanner.nextLine(); // Consume the newline character
+            System.out.print("Rate Per Piece: ");
+            float ratePerPiece = scanner.nextFloat();
+
+            // Create a new employee instance
+            PieceWorkerEmployee employee = new PieceWorkerEmployee(empID, empName, empDateHired, empBirthDate, totalPiecesFinished, ratePerPiece);
+
+            // Add the employee to the ArrayList
+            employees.add(employee);
+        }
+
+        // Display information for all employees
+        for (int i = 0; i < employees.size(); i++) {
+            System.out.println("\nEmployee #" + (i + 1) + " Information:");
+            //employees.get(i).displayInfo();
+            System.out.println(employees.get(i).toString());
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    private static Date parseDate(SimpleDateFormat dateFormat, String dateStr) {
+        try {
+            return dateFormat.parse(dateStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
 	}
 
 }
