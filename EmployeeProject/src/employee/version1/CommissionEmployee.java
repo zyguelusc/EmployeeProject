@@ -118,7 +118,7 @@ public class CommissionEmployee {
 		ArrayList<CommissionEmployee> cemp = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         
         System.out.print("Enter the maximum number of employees: ");
         int maxEmployees = scanner.nextInt();
@@ -131,7 +131,7 @@ public class CommissionEmployee {
             scanner.nextLine(); // Consume the newline character
             System.out.print("Employee Name: ");
             String empName = scanner.nextLine();
-            System.out.print("Date Hired (dd/MM/yyyy): ");
+            System.out.print("Date Hired (dd-MM-yyyy): ");
             Date empDateHired = null;
             try {
                 empDateHired = sdf.parse(scanner.nextLine());
@@ -140,7 +140,7 @@ public class CommissionEmployee {
                 i--;
                 continue;
             }
-            System.out.print("Birth Date (dd/MM/yyyy): ");
+            System.out.print("Birth Date (dd-MM-yyyy): ");
             Date empBirthDate = null;
             try {
                 empBirthDate = sdf.parse(scanner.nextLine());
@@ -156,6 +156,7 @@ public class CommissionEmployee {
             CommissionEmployee emp = new CommissionEmployee(empID, empName, empDateHired, empBirthDate, totalSales);
             cemp.add(emp);
         }
+        scanner.close();
         //display all employees
         for (int i = 0; i < cemp.size(); i++) {
             System.out.println("\nEmployee #" + (i + 1) + " Information:");
