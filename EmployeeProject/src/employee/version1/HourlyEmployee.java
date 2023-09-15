@@ -104,7 +104,13 @@ public class HourlyEmployee {
 
     @Override
     public String toString() {
-    	return empName;
+        return "Employee ID: " + empID +
+                "\nEmployee Name: " + empName +
+                "\nDate Hired: " + empDateHired +
+                "\nBirth Date: " + empBirthDate +
+                "\nTotal Hours Worked: " + totalHoursWorked +
+                "\nRate Per Piece: " + ratePerHour +
+                "\nSalary: " + computeSalary();
     }
     
 	public static void main(String[] args) {

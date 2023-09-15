@@ -105,7 +105,13 @@ public class PieceWorkerEmployee {
     
     @Override
     public String toString() {
-    	return empName;
+        return "Employee ID: " + empID +
+                "\nEmployee Name: " + empName +
+                "\nDate Hired: " + empDateHired +
+                "\nBirth Date: " + empBirthDate +
+                "\nTotal Pieces Finished: " + totalPiecesFinished +
+                "\nRate Per Piece: " + ratePerPiece +
+                "\nSalary: " + computeSalary();
     }
     
 	public static void main(String[] args) {
