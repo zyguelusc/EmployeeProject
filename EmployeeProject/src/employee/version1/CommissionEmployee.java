@@ -80,11 +80,25 @@ public class CommissionEmployee {
 
     // Method to compute salary
     public double computeSalary() {
-        // assume a fixed commission rate of 10%.
-	    //Not final
-	    // TO ADD : IF ELSE CONDITIONS OR NESTED IFS 
-        double commissionRate = 0.10;
-        return totalSales * commissionRate;
+        double CompSalary;
+    	if(totalSales < 50000) { //Low sales
+    	   CompSalary = totalSales * 0.05;
+    	
+    	}else if (totalSales >= 50000 && totalSales < 100000) { //typical Sales
+    	   CompSalary = totalSales * 0.20;
+    	   
+    	}else if (totalSales >= 100000 && totalSales < 500000) { //typical sales
+    		CompSalary = totalSales * 0.30;
+    	
+    	}else if (totalSales >= 500000) { 	//High Sales
+    		CompSalary = totalSales * 0.50;
+    	
+    	}else {
+    		CompSalary = -1.0;
+    	}
+        
+    	return CompSalary;
+	    
     }
 
 	public static void main(String[] args) {
