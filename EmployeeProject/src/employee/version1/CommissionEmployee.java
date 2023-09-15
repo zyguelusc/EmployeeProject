@@ -1,6 +1,10 @@
 package employee.version1;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 public class CommissionEmployee {
 	private int empID;
@@ -101,10 +105,62 @@ public class CommissionEmployee {
     
        
     }
+    @Override
+    public String toString(){
+        return "Employee ID: " + empID + "\nEmployee Name: " +
+         empName + "\nEmployee Date Hired: " + empDateHired + 
+         "\nEmployee Birth Date: " + empBirthDate + "\nEmployee Total Sales: " 
+         + totalSales + "\nEmployee Salary: " + computeSalary();
+    }
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-	}
+		ArrayList<CommissionEmployee> cemp = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        
+        System.out.print("Enter the maximum number of employees: ");
+        int maxEmployees = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline character
+        
+        for (int i = 0; i < maxEmployees; i++) {
+            System.out.println("Enter the details of employee #" + (i + 1));
+            System.out.print("Employee ID: ");
+            int empID = scanner.nextInt();
+            scanner.nextLine(); // Consume the newline character
+            System.out.print("Employee Name: ");
+            String empName = scanner.nextLine();
+            System.out.print("Date Hired (dd/MM/yyyy): ");
+            Date empDateHired = null;
+            try {
+                empDateHired = sdf.parse(scanner.nextLine());
+            } catch (ParseException e) {
+                System.out.println("Invalid date format. Please try again.");
+                i--;
+                continue;
+            }
+            System.out.print("Birth Date (dd/MM/yyyy): ");
+            Date empBirthDate = null;
+            try {
+                empBirthDate = sdf.parse(scanner.nextLine());
+            } catch (ParseException e) {
+                System.out.println("Invalid date format. Please try again.");
+                i--;
+                continue;
+            }
+            System.out.print("Total Sales: ");
+            double totalSales = scanner.nextDouble();
+            scanner.nextLine(); // Consume the newline character
+            
+            CommissionEmployee emp = new CommissionEmployee(empID, empName, empDateHired, empBirthDate, totalSales);
+            cemp.add(emp);
+        }
+        //display all employees
+        for (int i = 0; i < cemp.size(); i++) {
+            System.out.println("\nEmployee #" + (i + 1) + " Information:");
+            System.out.println(cemp.get(i).toString());
+        }
+    }
 
 }
