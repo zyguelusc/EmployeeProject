@@ -1,9 +1,6 @@
 package employee.version2;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Scanner;
+
 public class HourlyEmployee {
 	private int empID;
 	private String empName;
