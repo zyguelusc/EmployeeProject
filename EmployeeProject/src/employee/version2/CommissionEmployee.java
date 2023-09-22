@@ -1,5 +1,5 @@
 package employee.version2;
-
+//Done
 public class CommissionEmployee extends Employee {
 	
 	private double totalSales;

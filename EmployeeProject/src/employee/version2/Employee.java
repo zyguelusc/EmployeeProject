@@ -1,6 +1,6 @@
 package employee.version2;
 import java.util.Date;
-
+//Done
 public class Employee {
     private int empID;
     private String empName;
@@ -56,7 +56,7 @@ public class Employee {
         sb.append(String.format("Id: %d\n", this.empID));
         sb.append(String.format("Name: %s\n", this.empName));
         sb.append(String.format("Date Hired: %s\n", DateParse.convertDateToString(this.empDateHired)));
-        sb.append(String.format("Date Birthed: %s", DateParse.convertDateToString(this.empBirthDate)));
+        sb.append(String.format("Date Birth: %s", DateParse.convertDateToString(this.empBirthDate)));
         
         System.out.println(sb.toString());
     }
@@ -67,7 +67,7 @@ public class Employee {
         sb.append(String.format("Id: %d\n", this.empID));
         sb.append(String.format("Name: %s\n", this.empName));
         sb.append(String.format("Date Hired: %s\n", DateParse.convertDateToString(this.empDateHired)));
-        sb.append(String.format("Date Birthed: %s\n", DateParse.convertDateToString(this.empBirthDate)));
+        sb.append(String.format("Date of Birth: %s\n", DateParse.convertDateToString(this.empBirthDate)));
         
         return sb.toString();
     }
