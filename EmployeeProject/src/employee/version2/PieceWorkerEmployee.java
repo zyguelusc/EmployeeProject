@@ -40,7 +40,7 @@ public class PieceWorkerEmployee extends Employee {
         this.totalPiecesFinished = totalPiecesFinished;
     }
     
-    public void setRatePerPiece(float ratePerPiece) {
+    public void setRatePerPiece(double ratePerPiece) {
         this.ratePerPiece = ratePerPiece;
     }
     
