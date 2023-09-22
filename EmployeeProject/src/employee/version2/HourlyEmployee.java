@@ -1,20 +1,13 @@
 package employee.version2;
 
 
-public class HourlyEmployee {
-	private int empID;
-	private String empName;
-	private Date empDateHired;
-	private Date empBirthDate;
+public class HourlyEmployee extends Employee {
+
 	private float totalHoursWorked;
 	private float ratePerHour;
-	private int globalVar; // This sets as Max number of employees to input;
-	 // Default constructor
+
     public HourlyEmployee() {
-        this.empID = -404;
-        this.empName = null;
-        this.empDateHired = null;
-        this.empBirthDate = null;
+        super();
         this.totalHoursWorked = 0.0f;
         this.ratePerHour = 0.0f;
     }
