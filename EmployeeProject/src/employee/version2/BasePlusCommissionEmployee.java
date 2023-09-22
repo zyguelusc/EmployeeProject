@@ -29,7 +29,7 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
      
         return super.computeSalary() + baseSalary;
     }
-
+    @Override
     public void displayInfo(){
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("\nEMPLOYEE INFORMATION\n"));
