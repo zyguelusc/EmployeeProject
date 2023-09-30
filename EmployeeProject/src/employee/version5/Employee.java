@@ -18,7 +18,7 @@ public class Employee {
     this.empName = empName;
     this.empDateHired = empDateHired;
     this.empBirthDate = empBirthDate;
-    //this.type = type;
+    
 }
 
     public String getType() {
@@ -28,7 +28,7 @@ public class Employee {
     public double computeSalary() {
         return 0.0;
     }
-    // Getters and setters for the protected fields
+    // Getters and setters for all attributes
     public int getEmpID() {
         return empID;
     }
@@ -73,5 +73,5 @@ public class Employee {
         System.out.println("Date Hired: " + empDateHired);
         System.out.println("Date of Birth: " + empBirthDate);
     }
-    // Add other common methods as needed
+   
 }

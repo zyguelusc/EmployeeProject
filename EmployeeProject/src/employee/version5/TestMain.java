@@ -10,12 +10,12 @@ public class TestMain {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         Name[] employeeNames = {
-            new Name("John", "Smith"),
-            new Name("Alice", "Johnson"),
-            new Name("David", "Brown"),
-            new Name("Emily", "Davis"),
-            new Name("Michael", "Wilson"),
-            new Name("Sarah", "Miller")
+            new Name("John", "Raul"),
+            new Name("Alexa", "Kansan"),
+            new Name("Piero", "Figero"),
+            new Name("Emily", "Watsons"),
+            new Name("Mizaki", "Ubakata"),
+            new Name("Maybe", "Sure")
         };
 
 
